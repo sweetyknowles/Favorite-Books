@@ -5,20 +5,37 @@ class Api::ReadersController < ApplicationController
         render json: @readers 
     end
 
-    def create 
+    def create
         @reader = Reader.create!(reader_params)
+    
         render json: @reader
-    end
+      end
     
     def show 
         @reader = Reader.find(params[:id])
         render json:@reader
     end
 
+    def update
+        @reader = Reader.find(params[:id])
+        reader.update!(reader_params)
+        render json:@reader
+    end
+    def destroy
+        @reader = Reader.find(params[:id]).delete
+    
+        render status: :ok
+      end
+    
+      private
+    
+      def reader_params
+        params.require(:reader).permit(:name, :photo_url, :location)
+      end
+    end
 
 
 
 
 
 
-end
