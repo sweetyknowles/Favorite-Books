@@ -18,7 +18,7 @@ class Api::ReadersController < ApplicationController
 
     def update
         @reader = Reader.find(params[:id])
-        reader.update!(reader_params)
+        @reader.update!(reader_params)
         render json:@reader
     end
     def destroy
