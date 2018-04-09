@@ -5,3 +5,30 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Reader.destroy_all
+Book.destroy_all
+
+#test reader
+
+Reader_one = Reader.create! ({
+    name: "Kent",
+    photo_url: "http://englishbookgeorgia.com/blogebg/wp-content/uploads/2016/03/media1.gif",
+    location: "Chicago"
+})
+
+Reader_two = Reader.create! ({
+    name: "Sandra",
+    photo_url: "http://sanyangfrp.com/data/out/314/636113764-picture-of-someone-reading-a-book.jpg",
+    location: "Seattle"
+})
+Reader_three = Reader.create! ({
+    name: "Owen",
+    photo_url: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/18424094_10154438579181319_3097860592699459989_n.jpg?_nc_cat=0&oh=fb86cdf4e53f10abb1e55fb8ac1ce3bd&oe=5B5AD8CA",
+    location: "Bath"
+})
+Reader_four = Reader.create! ({
+    name: "Isreal",
+    photo_url: "http://c8.alamy.com/comp/K7H0MM/enjoy-relax-times-with-reading-book-asian-women-thai-teen-smile-with-K7H0MM.jpg",
+    location: "California"
+})
+
