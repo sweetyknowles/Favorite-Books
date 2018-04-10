@@ -21,7 +21,12 @@ componenetWillMount(){
 fetchReaderAndBookData = async (readerId) =>{
     try{
 
-        const readerResponse = await axios.get(`/api/readers/${readerId`)
+        const readerResponse = await axios.get(`/api/readers/${readerId}`)
+        const booksResponse = await axios.get (`/api/readers/${readerId}`)
+        await this.state({
+            reader:readerResponse.data,
+            
+        })
     }
 }
 
