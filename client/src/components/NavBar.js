@@ -17,7 +17,7 @@ const NavBar = () => {
       <h1>Reading Bee</h1>
       <div>
         <div><Link to="/">All Readers</Link></div>
-        <div><Link to="/reader/3">Reading Bee</Link></div>
+        {/* <div><Link to="/reader/3">Reading Bee</Link></div> */}
       </div>
     </NavStyle>
   )

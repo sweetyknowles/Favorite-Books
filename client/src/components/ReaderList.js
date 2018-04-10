@@ -36,7 +36,7 @@ class ReaderList extends Component {
   getAllReaders = async () => {
     try {
       const response = await axios.get('/api/readers')
-      this.setState({ readers: response.data })
+      this.setState({ readers: response.data})
     } catch (err) {
       console.log(err)
       this.setState({ err: err.message })
@@ -75,7 +75,7 @@ class ReaderList extends Component {
         <Button primary onClick={this.toggleNewReaderForm}>
           Create New Reader
         </Button>
-        { this.state.readerFormOpen ? <NewReaderForm createNewReader={this.createNewReader} handleChange={this.handleChange} newReader={this.state.newReader}/> : null}
+        { this.state.readerFormOpen ? <NewReaderForm createNewReader={this.createNewReader} handleChange={this.handleChange} newReader={this.state.newReader}/> : null} 
         <FlexCards>
           {this.state.readers.map(reader => {
             return (

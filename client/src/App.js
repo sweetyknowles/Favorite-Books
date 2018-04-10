@@ -12,7 +12,7 @@ class App extends Component {
           <NavBar />
           <Switch>
             <Route exact path="/" component={ReaderList} />
-            <Route path="/reader/:id" component={SingleReader} />
+            <Route path="/readers/:id" component={SingleReader} />
           </Switch>
         </div>
       </Router>

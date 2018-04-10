@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Card, Image, Grid, List, Divider, Button } from 'semantic-ui-react';
+import { Card, Image, Grid, Divider, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import EditReaderForm from './EditReaderForm';
 
@@ -12,8 +12,10 @@ class SingleReader extends Component {
   };
 
   componentDidMount () {
+    console.log("singler Reader")
     this.getSingleReader()
-  }
+    
+  };
 
   getSingleReader = async () => {
     const readerId = this.props.match.params.id
@@ -53,16 +55,18 @@ class SingleReader extends Component {
   };
 
   render () {
+  
     return (
+     
       <Grid centered>
         <Divider />
-        {this.state.showEditReader ? (
+        {/* {this.state.showEditReader ? (
           <EditReaderForm
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
             reader={this.state.reader}
           />
-        ) : (
+        ) : ( */}
           <Card raised>
             <Link to={`/readers/${this.state.reader.id}`}>
               <Image centered fluid>
@@ -80,7 +84,8 @@ class SingleReader extends Component {
               </Button>
             </Card.Content>
           </Card>
-        )}
+        {/* ) */}
+        }
 
         <Divider />
 
