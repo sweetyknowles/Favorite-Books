@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import ReaderList from "./components/ReaderList"
-import Reader from "./components/Reader"
+import SingleReader from "./components/SingleReader"
 import './App.css';
 
 class App extends Component {
@@ -18,7 +18,7 @@ class App extends Component {
                 </div>
 
                 <Route exact path="/" component={ReaderList}/>
-                <Route path="/readers/:id" component={Reader}/>
+                <Route path="/readers/:id" component={SingleReader}/>
 
             </div>
         </Router>

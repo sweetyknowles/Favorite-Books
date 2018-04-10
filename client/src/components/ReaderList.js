@@ -14,7 +14,7 @@ const FlexCards = styled.div`
 
 class ReaderList extends Component {
   state = {
-    artists: []
+    readers: []
   }
 
   componentDidMount () {
