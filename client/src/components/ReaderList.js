@@ -26,12 +26,30 @@ class readerList extends Component {
      }
      }
     render() {
-        return (
+        if (this.state.error)
+        
+        return 
             <div>
-                
+               {this.state.error} 
             </div>
-        );
+     }
+     return
+     (
+         <div>
+         
+         <h1> Readers List</h1>
+         {this.state.readers.map(readers => (
+             <div> key={reader.id}>
+             <Link to={`/reader/${reader.id}`} >{reader.name}</Link>
+
+             </div>
+
+         ))}
+         
+         </div>
+     )
+       
     }
 }
 
-export default componentName;
+export default ReaderList;
