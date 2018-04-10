@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Card, Image, Grid, List, Divider, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import EditReaderForm from './EditArtistForm';
+import EditReaderForm from './EditReaderForm';
 
 class SingleReader extends Component {
   state = {
