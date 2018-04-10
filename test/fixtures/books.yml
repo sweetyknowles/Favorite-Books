@@ -3,15 +3,15 @@
 one:
   title: MyString
   author: MyString
-  photo_url: MyString
   publish: MyString
   genre: MyString
   synopis: MyString
+  reader: one
 
 two:
   title: MyString
   author: MyString
-  photo_url: MyString
   publish: MyString
   genre: MyString
   synopis: MyString
+  reader: two

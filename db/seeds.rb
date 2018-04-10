@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Reader.destroy_all
-Book.destroy_all
+
 
 #test reader
 
@@ -21,18 +21,19 @@ Reader_two = Reader.create! ({
     photo_url: "https://i.pinimg.com/originals/e2/43/0c/e2430c6bff26da006141114bddd8710d.jpg",
     location: "Seattle"
 })
-Reader_three = Reader.create! ({
+owen = Reader.create! ({
     name: "Owen",
     photo_url: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/18424094_10154438579181319_3097860592699459989_n.jpg?_nc_cat=0&oh=fb86cdf4e53f10abb1e55fb8ac1ce3bd&oe=5B5AD8CA",
     location: "Bath"
 })
-Reader_four = Reader.create! ({
+reader_four = Reader.create! ({
     name: "Isreal",
     photo_url: "http://c8.alamy.com/comp/K7H0MM/enjoy-relax-times-with-reading-book-asian-women-thai-teen-smile-with-K7H0MM.jpg",
     location: "California"
 })
 
 Book_one = Book.create!({
+    reader_id: owen.id,
     title: "In The Woods",
     author: "Tana French",
     photo_url: "https://images.gr-assets.com/books/1348442606l/237209.jpg",
