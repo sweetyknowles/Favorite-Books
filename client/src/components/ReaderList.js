@@ -26,7 +26,7 @@ class ReaderList extends Component {
 
   getAllReaders = async () => {
     const response = await axios.get('/api/readers')
-    this.setState({ readers: response.data.readers })
+    this.setState({ readers: response.data })
    
   }
 
