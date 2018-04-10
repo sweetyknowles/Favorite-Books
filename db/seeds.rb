@@ -32,3 +32,12 @@ Reader_four = Reader.create! ({
     location: "California"
 })
 
+Book_one = Book.create!({
+    title: "In The Woods",
+    author: "Tana French",
+    photo_url: "https://images.gr-assets.com/books/1348442606l/237209.jpg",
+    publish: "May 17,2007",
+    genre: "Mystery/Fiction/Thriller/Crime",
+    synpois: "As dusk approaches a small Dublin suburb in the summer of 1984, mothers begin to call their children home. But on this warm evening, three children do not return from the dark and silent woods. When the police arrive, they find only one of the children. He is gripping a tree trunk in terror, wearing blood-filled sneakers and unable to recall a single detail of the previous hours.",
+       
+})

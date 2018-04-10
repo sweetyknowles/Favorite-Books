@@ -16,8 +16,8 @@ const NavBar = () => {
     <NavStyle>
       <h1>Reading Bee</h1>
       <div>
-        <div><Link to="/">All Reader</Link></div>
-        <div><Link to="/artist/3">Test Single Reader</Link></div>
+        <div><Link to="/">All Readers</Link></div>
+        <div><Link to="/reader/3">Reading Bee</Link></div>
       </div>
     </NavStyle>
   )
