@@ -16,13 +16,13 @@ class EditReaderForm extends Component {
           />
         </Form.Field>
         <Form.Field>
-          <label>Nationality</label>
+          <label>Location</label>
           <Input
             placeholder={this.props.reader.location}
-            name="nationality"
+            name="location"
             type="text"
             onChange={this.props.handleChange}
-            value={this.props.reader.nationality}
+            value={this.props.reader.location}
           />
         </Form.Field>
         <Form.Field>

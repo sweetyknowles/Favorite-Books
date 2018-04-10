@@ -10,7 +10,7 @@ class NewReaderForm extends Component {
         </Form.Field>
         <Form.Field>
           <label>Location</label>
-          <input placeholder='Location' name="location" onChange={this.props.handleChange} value={this.props.newReader.nationality}/>
+          <input placeholder='Location' name="location" onChange={this.props.handleChange} value={this.props.newReader.location}/>
         </Form.Field>
         <Form.Field>
           <label>Photo Url</label>
