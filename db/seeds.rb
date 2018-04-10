@@ -17,8 +17,8 @@ Reader_one = Reader.create! ({
 })
 
 Reader_two = Reader.create! ({
-    name: "Sandra",
-    photo_url: "http://sanyangfrp.com/data/out/314/636113764-picture-of-someone-reading-a-book.jpg",
+    name: "Diana",
+    photo_url: "https://i.pinimg.com/originals/e2/43/0c/e2430c6bff26da006141114bddd8710d.jpg",
     location: "Seattle"
 })
 Reader_three = Reader.create! ({
