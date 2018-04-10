@@ -1,30 +1,23 @@
-import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
-import ReaderList from "./components/ReaderList"
-import SingleReader from "./components/SingleReader"
-import './App.css';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import ReaderList from './components/ReaderList'
+import SingleReader from './components/SingleReader'
+import NavBar from './components/NavBar'
 
 class App extends Component {
-  render() {
+  render () {
     return (
-        <Router>
-            <div className="App">
-
-                <div>
-                    <h1>Reading Bee</h1>
-                    <div>
-                        <div><Link to="/">All Reading Bees</Link></div>
-                    </div>
-                </div>
-
-                <Route exact path="/" component={ReaderList}/>
-                <Route path="/readers/:id" component={SingleReader}/>
-
-            </div>
-        </Router>
-    );
-}
+      <Router>
+        <div>
+          <NavBar />
+          <Switch>
+            <Route exact path="/" component={ReaderList} />
+            <Route path="/reader/:id" component={SingleReader} />
+          </Switch>
+        </div>
+      </Router>
+    )
+  }
 }
 
-
-export default App;
+export default App
