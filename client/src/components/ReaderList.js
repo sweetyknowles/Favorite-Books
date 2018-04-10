@@ -26,7 +26,7 @@ class readerList extends Component {
      }
      }
     render() {
-        if (this.state.error)
+        if (this.state.error){
         
         return 
             <div>
