@@ -19,8 +19,8 @@ class SingleReader extends Component {
     const readerId = this.props.match.params.id
     const res = await axios.get(`/api/readers/${readerId}`)
     this.setState({
-      reader: res.data.reader,
-      books: res.data.books
+      reader: res.data,
+      books: res.data
     })
     console.log(res.data)
   };
@@ -84,7 +84,7 @@ class SingleReader extends Component {
 
         <Divider />
 
-        <List>
+        {/* <List>
           {this.state.books.map(book => {
             return (
               <List.Item key={book.id}>
@@ -93,7 +93,7 @@ class SingleReader extends Component {
               </List.Item>
             )
           })}
-        </List>
+        </List> */}
       </Grid>
     )
   }
