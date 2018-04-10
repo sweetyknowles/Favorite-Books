@@ -18,7 +18,7 @@ class App extends Component {
                 </div>
 
                 <Route exact path="/" component={ReaderList}/>
-                <Route path="/reader/:id" component={Reader}/>
+                <Route path="/readers/:id" component={Reader}/>
 
             </div>
         </Router>
