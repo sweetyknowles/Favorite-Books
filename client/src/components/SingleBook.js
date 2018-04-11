@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Card, Image, Grid, Divider, List, Button,Item } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-//import EditReaderForm from "./EditReaderForm";
-
+import EditBookForm from "./EditReaderForm";
+import NewBookForm from "./NewBookForm"
 
 class SingleBook extends Component {
   state = {
     book: {},
     comments: [],
-    //showEditReader: false
+    showEditBook: false
   };
 
   componentDidMount() {

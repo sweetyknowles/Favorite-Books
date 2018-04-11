@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class NewReaderForm extends Component {
+class NewBookForm extends Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ class NewReaderForm extends Component {
     }
 }
 
-export default NewReaderForm;
+export default NewBookform;
