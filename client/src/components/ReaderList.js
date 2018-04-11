@@ -11,7 +11,16 @@ const FlexCards = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   align-content: flex-start;
-  
+`
+
+const ButtonWrapper = styled.div`
+text-align: center;
+margin: 25px;
+`
+
+const TextWrapper = styled.div`
+text-align: center;
+padding: 15px;
 `
 
 
@@ -73,19 +82,12 @@ class ReaderList extends Component {
   render () {
     return (
       <Container>
-        
+        <TextWrapper>
         <h1>All Reading Bees</h1>
          <p>Welcome to Reading Bee.
             Here you can share and discuss your favorite 
             books, you've been reading like a busy bee.</p>
-          
-
-
-        <Button primary onClick={this.toggleNewReaderForm}>
-          Create New Reader
-        </Button>
-        
-        { this.state.readerFormOpen ? <NewReaderForm createNewReader={this.createNewReader} handleChange={this.handleChange} newReader={this.state.newReader}/> : null} 
+            </TextWrapper>
         <FlexCards>
           {this.state.readers.map(reader => {
             return (
@@ -104,6 +106,12 @@ class ReaderList extends Component {
           })}
         </FlexCards>
         {this.state.err}
+        <ButtonWrapper>
+        <Button primary onClick={this.toggleNewReaderForm}>
+          Create New Reader
+        </Button>
+        { this.state.readerFormOpen ? <NewReaderForm createNewReader={this.createNewReader} handleChange={this.handleChange} newReader={this.state.newReader}/> : null} 
+        </ButtonWrapper>
         
       </Container>
     )

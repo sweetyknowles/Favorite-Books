@@ -5,13 +5,6 @@ import { Link } from "react-router-dom";
 import EditReaderForm from "./EditReaderForm";
 
 
-
-
-
-
-
-
-
 class SingleReader extends Component {
   state = {
     reader: {},
@@ -96,7 +89,8 @@ class SingleReader extends Component {
           {this.state.books.map(book => {
             return (
               <Item key={book.id}>
-               <Item>
+ <Item>
+ 
       <Item.Image size='tiny' src={book.photo_url} />
   <Item.Content HorizontalAlign='middle'>Title:{book.title}</Item.Content>
   <Item.Content HorizontalAlign='middle'>Author:{book.author}</Item.Content>
@@ -106,6 +100,7 @@ class SingleReader extends Component {
     </Item>
 
    </Item>
+  
 
               
             );
