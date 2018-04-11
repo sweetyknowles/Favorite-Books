@@ -91,7 +91,7 @@ class SingleReader extends Component {
            {this.state.books.map(book => {
             return (
               <List.Item key={book.id}>
-                {book.title}
+               <h1>{book.title}<h1>
                 {book.photo_url}
                 {book.author}
                 {book.publish}
@@ -99,17 +99,15 @@ class SingleReader extends Component {
                 {book.synopis}
                 
                 
-              </List.Item>
+                </List.Item>
             )
-          })} 
+          })}
         </List>
-         
       </Grid>
     )
   }
 }
 
-     
       
 
 export default SingleReader
