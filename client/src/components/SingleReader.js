@@ -22,7 +22,7 @@ class SingleReader extends Component {
     const res = await axios.get(`/api/readers/${readerId}`)
     this.setState({
       reader: res.data,
-      books: res.data
+      books: res.data.books
     })
     console.log(res.data)
   };
@@ -87,17 +87,23 @@ class SingleReader extends Component {
         )}
 
         <Divider />
-
-         <List>
-          {this.state.books.map(book => {
+        <List>
+           {this.state.books.map(book => {
             return (
               <List.Item key={book.id}>
                 {book.title}
-                <audio controls src={book.preview_url} />
+                {book.photo_url}
+                {book.author}
+                {book.publish}
+                {book.genre}
+                {book.synopis}
+                
+                
               </List.Item>
             )
-          })}
-        </List> 
+          })} 
+        </List>
+         
       </Grid>
     )
   }

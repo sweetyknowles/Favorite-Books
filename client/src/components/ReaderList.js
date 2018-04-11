@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Modal,Button,Card,Accordian,icon,Segment, Image, Container } from 'semantic-ui-react'
+import { Button,Card,icon, Image, Container } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import NewReaderForm from './NewReaderForm'
