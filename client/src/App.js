@@ -8,17 +8,17 @@ import NavBar from "./components/NavBar";
 class App extends Component {
   render() {
     return (
-      <Body>
         <Router>
           <div>
             <NavBar />
             <Switch>
+              <Body>
               <Route exact path="/" component={ReaderList} />
               <Route path="/readers/:id" component={SingleReader} />
+              </Body>
             </Switch>
           </div>
         </Router>
-      </Body>
     );
   }
 }
@@ -26,5 +26,15 @@ class App extends Component {
 export default App;
 
 const Body = styled.div`
-width: 100vw;
+
+margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url("https://i.imgur.com/u1bGOfU.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+
 `

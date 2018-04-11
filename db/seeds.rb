@@ -91,3 +91,10 @@ Book_two = Book.create!({
     synopis: "
     In the heart of Italy, Harvard professor of symbology Robert Langdon is drawn into a harrowing world centered on one of history’s most enduring and mysterious literary masterpieces . . .",      
  })
+ comment_one = Comment.create! ({
+     book_id: book_one.id,
+    comment:"Amazing book, if you are looking for suspense and thrill
+    this will glue you to it, seriously check out! "
+
+    
+})
