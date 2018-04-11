@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Button,Card,icon, Image, Container } from 'semantic-ui-react'
+import { Button,Card,icon, Image, Container,Tranistion,Divider } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import NewReaderForm from './NewReaderForm'
@@ -13,6 +13,7 @@ const FlexCards = styled.div`
   align-content: flex-start;
   
 `
+
 
 class ReaderList extends Component {
   state = {
@@ -108,7 +109,6 @@ class ReaderList extends Component {
     )
   }
 }
-
-
+ 
 export default ReaderList
 

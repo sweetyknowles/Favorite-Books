@@ -47,12 +47,12 @@ isreal = Reader.create! ({
 
 Book_one = Book.create!({
     reader_id: owen.id,
-    title: "In The Woods",
-    author: "Tana French",
-    photo_url: "https://images.gr-assets.com/books/1348442606l/237209.jpg",
-    publish: "May 17,2007",
-    genre: "Mystery/Fiction/Thriller/Crime",
-    synopis: "As dusk approaches a small Dublin suburb in the summer of 1984, mothers begin to call their children home. But on this warm evening, three children do not return from the dark and silent woods. When the police arrive, they find only one of the children. He is gripping a tree trunk in terror, wearing blood-filled sneakers and unable to recall a single detail of the previous hours.",
+    title: "Outpost",
+    author: "W.Michael Gear",
+    photo_url: "https://prodimage.images-bn.com/pimages/9780756413378_p0_v2_s550x406.jpg",
+    publish: "February 20, 2018",
+    genre: "Fiction/SciFi",
+    synopis: "When the ship Turalon arrives in orbit, Supervisor Kalico Aguila discovers a failing colony, its government overthrown and the few remaining colonists now gone wild. Donovan offers the chance of a lifetime, one that could leave her the most powerful woman in the solar system.",
        
 })
 

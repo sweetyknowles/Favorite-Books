@@ -1,8 +1,16 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { Card, Image, Grid, Divider, List, Button } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
-import EditReaderForm from './EditReaderForm';
+import React, { Component } from "react";
+import axios from "axios";
+import { Card, Image, Grid, Divider, List, Button,Item } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import EditReaderForm from "./EditReaderForm";
+
+
+
+
+
+
+
+
 
 class SingleReader extends Component {
   state = {
@@ -11,53 +19,50 @@ class SingleReader extends Component {
     showEditReader: false
   };
 
-  componentDidMount () {
+  componentDidMount() {
     //console.log("singler Reader")
-    this.getSingleReader()
-    
-  };
+    this.getSingleReader();
+  }
 
   getSingleReader = async () => {
-    const readerId = this.props.match.params.id
-    const res = await axios.get(`/api/readers/${readerId}`)
+    const readerId = this.props.match.params.id;
+    const res = await axios.get(`/api/readers/${readerId}`);
     this.setState({
       reader: res.data,
       books: res.data.books
-    })
-    console.log(res.data)
+    });
+    console.log(res.data);
   };
 
   deleteReader = async () => {
-    const readerId = this.props.match.params.id
-    await axios.delete(`/api/readers/${readerId}`)
-    console.log(this.props.match.params.id)
-    this.props.history.push('/')
+    const readerId = this.props.match.params.id;
+    await axios.delete(`/api/readers/${readerId}`);
+    console.log(this.props.match.params.id);
+    this.props.history.push("/");
   };
 
   toggleShowEdit = () => {
-    this.setState({ showEditReader: !this.state.showEditReader })
+    this.setState({ showEditReader: !this.state.showEditReader });
   };
 
   handleSubmit = async e => {
-    e.preventDefault()
-    const readerId = this.state.reader.id
-    const readerUpdate = { ...this.state.reader }
-    await axios.patch(`/api/readers/${readerId}`, readerUpdate)
-    this.toggleShowEdit()
-    await this.getSingleReader()
+    e.preventDefault();
+    const readerId = this.state.reader.id;
+    const readerUpdate = { ...this.state.reader };
+    await axios.patch(`/api/readers/${readerId}`, readerUpdate);
+    this.toggleShowEdit();
+    await this.getSingleReader();
   };
 
   handleChange = e => {
-    const reader = e.target.name
-    const newReader = { ...this.state.reader }
-    newReader[ reader ] = e.target.value
-    this.setState({ reader: newReader })
+    const reader = e.target.name;
+    const newReader = { ...this.state.reader };
+    newReader[reader] = e.target.value;
+    this.setState({ reader: newReader });
   };
 
-  render () {
-  
+  render() {
     return (
-
       <Grid centered>
         <Divider />
         {this.state.showEditReader ? (
@@ -76,11 +81,11 @@ class SingleReader extends Component {
             <Card.Header>{this.state.reader.name}</Card.Header>
             <Card.Content>
               <h4>{this.state.reader.location}</h4>
-               <Button negative onClick={this.deleteReader}>
-              Delete {this.state.reader.name}
+              <Button negative onClick={this.deleteReader}>
+                Delete {this.state.reader.name}
               </Button>
               <Button primary onClick={this.toggleShowEdit}>
-              Edit Reader
+                Edit Reader
               </Button>
             </Card.Content>
           </Card>
@@ -88,26 +93,26 @@ class SingleReader extends Component {
 
         <Divider />
         <List>
-           {this.state.books.map(book => {
+          {this.state.books.map(book => {
             return (
-              <List.Item key={book.id}>
-               <h1>{book.title}<h1>
-                {book.photo_url}
-                {book.author}
-                {book.publish}
-                {book.genre}
-                {book.synopis}
-                
-                
-                </List.Item>
-            )
+              <Item key={book.id}>
+               <Item>
+      <Item.Image size='tiny' src={book.photo_url} />
+  <Item.Content HorizontalAlign='middle'>Title:{book.title}</Item.Content>
+  <Item.Content HorizontalAlign='middle'>Author:{book.author}</Item.Content>
+  <Item.Content HorizontalAlign='middle'>Published:{book.publish}</Item.Content>
+  <Item.Content HorizontalAlign='middle'>Genre:{book.genre}</Item.Content>
+  <Item.Content HorizontalAlign='middle'>Synopis:{book.synopis}</Item.Content>
+    </Item>
+              </Item>
+
+              
+            );
           })}
         </List>
       </Grid>
-    )
+    );
   }
 }
 
-      
-
-export default SingleReader
+export default SingleReader;
