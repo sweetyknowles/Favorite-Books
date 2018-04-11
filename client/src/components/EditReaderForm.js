@@ -25,6 +25,28 @@ class EditReaderForm extends Component {
             value={this.props.reader.location}
           />
         </Form.Field>
+        
+        <Form.Field>
+          <label>Bio</label>
+          <Input
+            placeholder={this.props.reader.bio}
+            name="bio"
+            type="text"
+            onChange={this.props.handleChange}
+            value={this.props.reader.bio}
+             />
+             
+        </Form.Field>
+        <Form.Field>
+          <label>Favorite Genre</label>
+          <Input
+            placeholder={this.props.reader.favorite_genre}
+            name="favorite_genre"
+            type="text"
+            onChange={this.props.handleChange}
+            value={this.props.reader.favorite_genre}
+             />
+             </Form.Field>
         <Form.Field>
           <label>Photo Url</label>
           <Input
@@ -33,7 +55,8 @@ class EditReaderForm extends Component {
             type="text"
             onChange={this.props.handleChange}
             value={this.props.reader.photo_url}
-          />
+             />
+             
         </Form.Field>
         <Form.Button color="green" type="submit">Edit Reader</Form.Button>
       </Form>

@@ -12,7 +12,7 @@ class SingleReader extends Component {
   };
 
   componentDidMount () {
-    console.log("singler Reader")
+    //console.log("singler Reader")
     this.getSingleReader()
     
   };
