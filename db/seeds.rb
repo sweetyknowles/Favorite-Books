@@ -57,13 +57,37 @@ Book_one = Book.create!({
 })
 
 Book_two = Book.create!({
+    reader_id: owen.id,
+    title: "CyberStorm",
+    author: "Mathew Mather",
+    photo_url: "https://images-na.ssl-images-amazon.com/images/I/51E3rlEMB0L.jpg",
+    publish: "March 15, 2013",
+    genre: "Fiction/SciFi",
+    synopis: "Sometimes the worst storms aren't caused by Mother Nature, and sometimes the worst nightmares aren't in the ones in our heads...",
+       
+})
+
+
+
+
+
+Book_two = Book.create!({
     reader_id: kent.id,
     title: "In The Woods",
     author: "Tana French",
     photo_url: "https://images.gr-assets.com/books/1348442606l/237209.jpg",
     publish: "May 17,2007",
     genre: "Mystery/Fiction/Thriller/Crime",
-    synopis: "As dusk approaches a small Dublin suburb in the summer of 1984, mothers begin to call their children home. But on this warm evening, three children do not return from the dark and silent woods. When the police arrive, they find only one of the children. He is gripping a tree trunk in terror, wearing blood-filled sneakers and unable to recall a single detail of the previous hours.",
-       
-})
+    synopis: "As dusk approaches a small Dublin suburb in the summer of 1984, mothers begin to call their children home. But on this warm evening, three children do not return from the dark and silent woods. When the police arrive, they find only one of the children. He is gripping a tree trunk in terror, wearing blood-filled sneakers and unable to recall a single detail of the previous hours.",      
+ })
 
+ Book_three = Book.create!({
+    reader_id: kent.id,
+    title: "Inferno",
+    author: "Dan Brown",
+    photo_url: "https://images.gr-assets.com/books/1397093185l/17212231.jpg",
+    publish: "May 14,2013",
+    genre: "Mystery/Fiction/Thriller/Conspiracy",
+    synopis: "
+    In the heart of Italy, Harvard professor of symbology Robert Langdon is drawn into a harrowing world centered on one of history’s most enduring and mysterious literary masterpieces . . .",      
+ })

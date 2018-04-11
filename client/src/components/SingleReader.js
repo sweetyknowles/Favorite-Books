@@ -104,7 +104,8 @@ class SingleReader extends Component {
   <Item.Content HorizontalAlign='middle'>Genre:{book.genre}</Item.Content>
   <Item.Content HorizontalAlign='middle'>Synopis:{book.synopis}</Item.Content>
     </Item>
-              </Item>
+
+   </Item>
 
               
             );
