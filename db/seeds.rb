@@ -13,23 +13,27 @@ Reader.destroy_all
 Reader_one = Reader.create! ({
     name: "Kent",
     photo_url: "http://englishbookgeorgia.com/blogebg/wp-content/uploads/2016/03/media1.gif",
-    location: "Chicago"
+    location: "Chicago",
+    
 })
 
 Reader_two = Reader.create! ({
     name: "Diana",
     photo_url: "https://i.pinimg.com/originals/e2/43/0c/e2430c6bff26da006141114bddd8710d.jpg",
-    location: "Seattle"
+    location: "Seattle",
+    
 })
 owen = Reader.create! ({
     name: "Owen",
     photo_url: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/18424094_10154438579181319_3097860592699459989_n.jpg?_nc_cat=0&oh=fb86cdf4e53f10abb1e55fb8ac1ce3bd&oe=5B5AD8CA",
-    location: "Bath"
+    location: "Bath",
+    
 })
 reader_four = Reader.create! ({
     name: "Isreal",
     photo_url: "http://c8.alamy.com/comp/K7H0MM/enjoy-relax-times-with-reading-book-asian-women-thai-teen-smile-with-K7H0MM.jpg",
-    location: "California"
+    location: "California",
+    
 })
 
 Book_one = Book.create!({
