@@ -13,7 +13,7 @@ class Api::ReadersController < ApplicationController
     
     def show 
         @reader = Reader.find(params[:id])
-        render json:@reader
+        render json:@reader, include: :books
     end
 
     def update

@@ -5,6 +5,11 @@ import { Input, Menu } from 'semantic-ui-react'
 import { Component } from 'react'
 
 
+const CustomMenu = styled(Menu)`
+  &&&& {
+    background: pink;
+  }
+`
 
  class NavBar extends Component{
   state = { activeItem: 'home' }
@@ -15,8 +20,8 @@ import { Component } from 'react'
     const { activeItem } = this.state
 
     return (
-      <Menu secondary>
-        <Menu.Item name='home' active={activeItem === 'ReaderList'} onClick={this.handleItemClick} />
+      <CustomMenu secondary>
+        <Menu.Item name='home' as={Link} to="/" active={activeItem === 'ReaderList'} onClick={this.handleItemClick} />
         {/* <Menu.Item name='messages' active={activeItem === 'messages'} onClick={this.handleItemClick} />
         <Menu.Item name='friends' active={activeItem === 'friends'} onClick={this.handleItemClick} /> */}
         <Menu.Menu position='right'>
@@ -25,7 +30,7 @@ import { Component } from 'react'
           </Menu.Item>
           <Menu.Item name='logout' active={activeItem === 'logout'} onClick={this.handleItemClick} />
         </Menu.Menu>
-      </Menu>
+      </CustomMenu>
     )
   }
 }

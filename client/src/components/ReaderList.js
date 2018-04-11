@@ -72,12 +72,12 @@ class ReaderList extends Component {
   render () {
     return (
       <Container>
-        <body>
+        
         <h1>All Reading Bees</h1>
          <p>Welcome to Reading Bee.
             Here you can share and discuss your favorite 
             books, you've been reading like a busy bee.</p>
-          </body>
+          
 
 
         <Button primary onClick={this.toggleNewReaderForm}>
@@ -94,6 +94,8 @@ class ReaderList extends Component {
                   <Card.Content>
                     <Card.Header>{reader.name}</Card.Header>
                     <Card.Meta>{reader.location}</Card.Meta>
+                    <Card.Meta>{reader.bio}</Card.Meta>
+                    <Card.Meta>{reader.favorite_genre}</Card.Meta>
                   </Card.Content>
                 </Link>
               </Card>

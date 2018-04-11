@@ -27,6 +27,9 @@ owen = Reader.create! ({
     name: "Owen",
     photo_url: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/18424094_10154438579181319_3097860592699459989_n.jpg?_nc_cat=0&oh=fb86cdf4e53f10abb1e55fb8ac1ce3bd&oe=5B5AD8CA",
     location: "Bath",
+    bio:" I am drummer, doing software development now. What a change!",
+    favorite_genre: "horror,scifi, thriller"
+
     
 })
 reader_four = Reader.create! ({
