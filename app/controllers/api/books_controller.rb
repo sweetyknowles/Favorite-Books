@@ -1,14 +1,8 @@
 class Api::BooksController < ApplicationController
 
     def index
-        @books = Book.all
+        @books = Reader.find(params[:reader_id]).books
         render json: @books
-      end
-    
-      def create
-        @book = Book.create!(book_params)
-    
-        render json: @book
       end
     
       def show
@@ -17,6 +11,18 @@ class Api::BooksController < ApplicationController
         render json: @book
       end
     
+      def create
+        
+        @reader = Reader.find(params[:reader_id])
+        @book = Book.new(book_params)
+    
+        render json: @book
+
+        @artist.books << @book
+        @reader.save!
+
+      end 
+
       def update
         @book = Book.find(params[:id])
         @book.update!(book_params)
@@ -36,4 +42,3 @@ class Api::BooksController < ApplicationController
         params.require(:book).permit(:title,:author, :publish, :genre, :photo_url, :synopis)
       end
     end
-end
