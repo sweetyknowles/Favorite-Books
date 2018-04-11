@@ -92,10 +92,10 @@ class ReaderList extends Component {
                 <Link to={`/readers/${reader.id}`}>
                   <Image src={reader.photo_url}/>
                   <Card.Content>
-                    <Card.Header>{reader.name}</Card.Header>
-                    <Card.Meta>{reader.location}</Card.Meta>
-                    <Card.Meta>{reader.bio}</Card.Meta>
-                    <Card.Meta>{reader.favorite_genre}</Card.Meta>
+                    <Card.Header>READING BEE:{reader.name}</Card.Header>
+                    <Card.Meta>BEE HIVE AT:{reader.location}</Card.Meta>
+                    <Card.Meta>BEE TYPE:{reader.bio}</Card.Meta>
+                    <Card.Meta>BEE FRENZY:{reader.favorite_genre}</Card.Meta>
                   </Card.Content>
                 </Link>
               </Card>

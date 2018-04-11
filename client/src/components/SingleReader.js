@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Card, Image, Grid, Divider, Button } from 'semantic-ui-react';
+import { Card, Image, Grid, Divider, List, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import EditReaderForm from './EditReaderForm';
 
@@ -57,16 +57,16 @@ class SingleReader extends Component {
   render () {
   
     return (
-     
+
       <Grid centered>
         <Divider />
-        {/* {this.state.showEditReader ? (
+        {this.state.showEditReader ? (
           <EditReaderForm
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
             reader={this.state.reader}
           />
-        ) : ( */}
+        ) : (
           <Card raised>
             <Link to={`/readers/${this.state.reader.id}`}>
               <Image centered fluid>
@@ -76,7 +76,7 @@ class SingleReader extends Component {
             <Card.Header>{this.state.reader.name}</Card.Header>
             <Card.Content>
               <h4>{this.state.reader.location}</h4>
-              <Button negative onClick={this.deleteReader}>
+               <Button negative onClick={this.deleteReader}>
               Delete {this.state.reader.name}
               </Button>
               <Button primary onClick={this.toggleShowEdit}>
@@ -84,12 +84,11 @@ class SingleReader extends Component {
               </Button>
             </Card.Content>
           </Card>
-        {/* ) */}
-        }
+        )}
 
         <Divider />
 
-        {/* <List>
+         <List>
           {this.state.books.map(book => {
             return (
               <List.Item key={book.id}>
@@ -98,10 +97,13 @@ class SingleReader extends Component {
               </List.Item>
             )
           })}
-        </List> */}
+        </List> 
       </Grid>
     )
   }
 }
+
+     
+      
 
 export default SingleReader
