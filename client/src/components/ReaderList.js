@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Modal,Button,Card, Image, Container } from 'semantic-ui-react'
+import { Modal,Button,Card,Accordian,icon,Segment, Image, Container } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import NewReaderForm from './NewReaderForm'
@@ -11,7 +11,6 @@ const FlexCards = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   align-content: flex-start;
-  
   
 `
 
@@ -73,10 +72,18 @@ class ReaderList extends Component {
   render () {
     return (
       <Container>
-        <h1>All Readers</h1>
+        <body>
+        <h1>All Reading Bees</h1>
+         <p>Welcome to Reading Bee.
+            Here you can share and discuss your favorite 
+            books, you've been reading like a busy bee.</p>
+          </body>
+
+
         <Button primary onClick={this.toggleNewReaderForm}>
           Create New Reader
         </Button>
+        
         { this.state.readerFormOpen ? <NewReaderForm createNewReader={this.createNewReader} handleChange={this.handleChange} newReader={this.state.newReader}/> : null} 
         <FlexCards>
           {this.state.readers.map(reader => {
@@ -94,6 +101,7 @@ class ReaderList extends Component {
           })}
         </FlexCards>
         {this.state.err}
+        
       </Container>
     )
   }
