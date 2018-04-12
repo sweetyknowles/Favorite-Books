@@ -18,7 +18,7 @@ class Api::BooksController < ApplicationController
     
         render json: @book
 
-        @artist.books << @book
+        @reader.books << @book
         @reader.save!
 
       end 
