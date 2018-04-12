@@ -4,6 +4,7 @@ import { Button,Card,icon, Image, Container,Tranistion,Divider } from 'semantic-
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import NewReaderForm from './NewReaderForm'
+import NewBookForm from'./NewBookForm'
 
 const FlexCards = styled.div`
   display: flex;
@@ -33,6 +34,17 @@ class ReaderList extends Component {
       location: '',
       photo_url: ''
        },
+       books: [],
+    BookFormOpen: false,
+    newBook: {
+      title: '',
+      author: '',
+      publish: '',
+      genre:'',
+      synopis:'',
+      photo_url: ''
+       },
+
     error: ''
   }
   
@@ -57,6 +69,17 @@ class ReaderList extends Component {
   toggleNewReaderForm = () => {
     this.setState({ readerFormOpen: !this.state.readerFormOpen })
   }
+  toggleNewBookForm = () => {
+    this.setState({ bookFormOpen: !this.state.bookFormOpen })
+  }
+  handleChange = (event) => {
+    const newBook = { ...this.state.newBook }
+    const attribute = event.target.name
+    newBook[ attribute ] = event.target.value
+
+    this.setState({ newBook: newBook })
+  }
+
 
   handleChange = (event) => {
     const newReader = { ...this.state.newReader }
