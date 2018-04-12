@@ -6,47 +6,58 @@ class EditBookForm extends Component {
     return (
       <Form onSubmit={this.props.handleSubmit}>
         <Form.Field>
-          <label>Name</label>
+          <label>Title</label>
           <Input
-            placeholder={this.props.book.name}
-            name="name"
+            placeholder={this.props.book.title}
+            name="title"
             type="text"
             onChange={this.props.handleChange}
-            value={this.props.book.name}
+            value={this.props.book.title}
           />
         </Form.Field>
         <Form.Field>
-          <label>Location</label>
+          <label>Author</label>
           <Input
-            placeholder={this.props.book.location}
-            name="location"
+            placeholder={this.props.book.Author}
+            name="author"
             type="text"
             onChange={this.props.handleChange}
-            value={this.props.book.location}
+            value={this.props.book.author}
           />
         </Form.Field>
         
         <Form.Field>
-          <label>Bio</label>
+          <label>publish</label>
           <Input
-            placeholder={this.props.book.bio}
-            name="bio"
+            placeholder={this.props.book.publish}
+            name="publish"
             type="text"
             onChange={this.props.handleChange}
-            value={this.props.book.bio}
+            value={this.props.book.publish}
              />
              
         </Form.Field>
         <Form.Field>
-          <label>Favorite Genre</label>
+          <label>Genre</label>
           <Input
-            placeholder={this.props.book.favorite_genre}
-            name="favorite_genre"
+            placeholder={this.props.book.genre}
+            name="genre"
             type="text"
             onChange={this.props.handleChange}
-            value={this.props.book.favorite_genre}
+            value={this.props.book.genre}
              />
              </Form.Field>
+             <Form.Field>
+          <label>Synopis</label>
+          <Input
+            placeholder={this.props.book.synopis}
+            name="synopis"
+            type="text"
+            onChange={this.props.handleChange}
+            value={this.props.book.synopis}
+             />
+             
+        </Form.Field>
         <Form.Field>
           <label>Photo Url</label>
           <Input

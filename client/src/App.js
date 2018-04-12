@@ -15,8 +15,8 @@ class App extends Component {
             <Switch>
               <Body>
               <Route exact path="/" component={ReaderList} />
-              <Route path="/readers/:id" component={SingleReader} />
-              <Route path="/books/:id" component={SingleBook} />
+              <Route exact path="/readers/:id" component={SingleReader} />
+              <Route exact path="/books/:id" component={SingleBook} />
               </Body>
             </Switch>
           </div>

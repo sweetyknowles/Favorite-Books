@@ -65,16 +65,16 @@ class SingleBook extends Component {
           />
         ) : (
           <Card raised>
-            <Link to={`/books/${this.state.book.id}`}>
+            
               <Image centered fluid>
                 <img src={this.state.book.photo_url} alt="" />
               </Image>
-            </Link>
-            <Card.Header>{this.state.book.name}</Card.Header>
+           
+            <Card.Header>{this.state.book.title}</Card.Header>
             <Card.Content>
-              <h4>{this.state.book.location}</h4>
+              <h4>{this.state.book.author}</h4>
               <Button negative onClick={this.deleteBook}>
-                Delete {this.state.book.name}
+                Delete {this.state.book.title}
               </Button>
               <Button primary onClick={this.toggleShowEdit}>
                 Edit Book

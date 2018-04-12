@@ -112,8 +112,9 @@ class SingleReader extends Component {
             return (
               <Item key={book.id}>
  <Item>
- 
-      <Item.Image size='tiny' src={book.photo_url} />
+ <Link to={`/books/${book.id}`}/>
+      <Item.Image size='small' src={book.photo_url} />
+
   <Item.Content HorizontalAlign='middle'>Title:{book.title}</Item.Content>
   <Item.Content HorizontalAlign='middle'>Author:{book.author}</Item.Content>
   <Item.Content HorizontalAlign='middle'>Published:{book.publish}</Item.Content>
