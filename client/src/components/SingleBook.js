@@ -7,7 +7,7 @@ import EditBookForm from "./EditBookForm";
 class SingleBook extends Component {
   state = {
     book: {},
-    comments: [],
+    reviews: [],
     showEditBook: false
   };
 
@@ -18,7 +18,8 @@ class SingleBook extends Component {
 
   getSingleBook = async () => {
     const bookId = this.props.match.params.id;
-    const res = await axios.get(`/api/books/${bookId}`);
+    const readerId = this.props.match.params.readerId;
+    const res = await axios.get(`/api/readers/${readerId}/books/${bookId}`);
     this.setState({
       book: res.data,
       books: res.data.books
@@ -65,10 +66,12 @@ class SingleBook extends Component {
           />
         ) : (
           <Card raised>
+          <Link to={`/books/${this.state.book.id}`}>
             
               <Image centered fluid>
-                <img src={this.state.book.photo_url} alt="" />
+                <img src={this.state.book.photo_url} />
               </Image>
+              </Link>
            
             <Card.Header>{this.state.book.title}</Card.Header>
             <Card.Content>
@@ -84,18 +87,18 @@ class SingleBook extends Component {
         )}
 
         <Divider />
-        {/* <List>
-          {this.state.books.map(book => {
+        <List>
+          {this.state.reviews.map(review => {
             return (
-              <Item key={book.id}>
+              <Item key={review.id}>
  <Item>
  
-      <Item.Image size='tiny' src={book.photo_url} />
-  <Item.Content HorizontalAlign='middle'>Title:{book.title}</Item.Content>
-  <Item.Content HorizontalAlign='middle'>Author:{book.author}</Item.Content>
+      <Item.Image size='tiny' src={review.content} />
+  <Item.Content HorizontalAlign='middle'>Title:{review.content}</Item.Content>
+  {/* <Item.Content HorizontalAlign='middle'>Author:{book.author}</Item.Content>
   <Item.Content HorizontalAlign='middle'>Published:{book.publish}</Item.Content>
   <Item.Content HorizontalAlign='middle'>Genre:{book.genre}</Item.Content>
-  <Item.Content HorizontalAlign='middle'>Synopis:{book.synopis}</Item.Content>
+  <Item.Content HorizontalAlign='middle'>Synopis:{book.synopis}</Item.Content> */}
     </Item>
 
    </Item>
@@ -104,7 +107,7 @@ class SingleBook extends Component {
               
             );
           })}
-        </List> */}
+        </List>
       </Grid>
     );
   }

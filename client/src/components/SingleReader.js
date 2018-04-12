@@ -116,46 +116,55 @@ class SingleReader extends Component {
           {this.state.books.map(book => {
             return (
               <Item key={book.id}>
-                <Item>
-                  <Link to={`/books/${book.id}`} >
-                    <Item.Image size="small" src={book.photo_url} />
-                  </Link>
-                  <Item.Content HorizontalAlign="middle">
-                    Title:{book.title}
-                  </Item.Content>
-                  <Item.Content HorizontalAlign="middle">
-                    Author:{book.author}
-                  </Item.Content>
-                  <Item.Content HorizontalAlign="middle">
-                    Published:{book.publish}
-                  </Item.Content>
-                  <Item.Content HorizontalAlign="middle">
-                    Genre:{book.genre}
-                  </Item.Content>
-                  <Item.Content HorizontalAlign="middle">
-                    Synopis:{book.synopis}
-                  </Item.Content>
-                </Item>
-
-                <ButtonWrapper>
-                  <Button primary onClick={this.toggleNewBookForm}>
-                    Create New Book
-                  </Button>
-                  {this.state.bookFormOpen ? (
-                    <NewBookForm
-                      createNewBook={this.createNewBook}
-                      handleChange={this.handleChange}
-                      newReader={this.state.newReader}
-                    />
-                  ) : null}
-                </ButtonWrapper>
+                <BookWrapper>
+                  <Item>
+                    <Link to={`/readers/${this.props.match.params.id}/books/${book.id}`}>
+                      <Item.Image size="small" src={book.photo_url} />
+                    </Link>
+                    <Item.Content HorizontalAlign="middle">
+                      Title:{book.title}
+                    </Item.Content>
+                    <Item.Content HorizontalAlign="middle">
+                      Author:{book.author}
+                    </Item.Content>
+                    <Item.Content HorizontalAlign="middle">
+                      Published:{book.publish}
+                    </Item.Content>
+                    <Item.Content HorizontalAlign="middle">
+                      Genre:{book.genre}
+                    </Item.Content>
+                    <Item.Content HorizontalAlign="middle">
+                      Synopis:{book.synopis}
+                    </Item.Content>
+                  </Item>
+                </BookWrapper>
               </Item>
             );
           })}
         </List>
+        <ButtonWrapper>
+          <Button primary onClick={this.toggleNewBookForm}>
+            Create New Book
+          </Button>
+          {this.state.bookFormOpen ? (
+            <NewBookForm
+              createNewBook={this.createNewBook}
+              handleChange={this.handleChange}
+              newReader={this.state.newReader}
+              newBook={this.state.newBook}
+            />
+          ) : null}
+        </ButtonWrapper>
       </Grid>
     );
   }
 }
 
 export default SingleReader;
+
+const BookWrapper = styled.div`
+  width: 40%;
+  display: block;
+  margin: 0 auto;
+  font-weight: bold;
+`;
