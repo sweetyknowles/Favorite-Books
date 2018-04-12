@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ReaderList from "./components/ReaderList";
 import SingleReader from "./components/SingleReader";
+import SingleBook from "./components/SingleBook";
 import NavBar from "./components/NavBar";
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
               <Body>
               <Route exact path="/" component={ReaderList} />
               <Route path="/readers/:id" component={SingleReader} />
+              <Route path="/books/:id" component={SingleBook} />
               </Body>
             </Switch>
           </div>

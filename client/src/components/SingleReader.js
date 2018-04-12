@@ -26,8 +26,8 @@ class SingleReader extends Component {
       synopis:'',
       photo_url: ''
        },
-    showEditReader: false
-  };
+       showEditReader: false,
+  }
   
 
   componentDidMount() {

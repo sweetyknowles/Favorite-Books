@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Card, Image, Grid, Divider, List, Button,Item } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import EditBookForm from "./EditReaderForm";
+import EditBookForm from "./EditBookForm";
 
 class SingleBook extends Component {
   state = {
@@ -58,7 +58,7 @@ class SingleBook extends Component {
       <Grid centered>
         <Divider />
         {this.state.showEditBook ? (
-          <EditReaderForm
+          <EditBookForm
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
             book={this.state.book}
@@ -110,4 +110,4 @@ class SingleBook extends Component {
   }
 }
 
-export default SingleReader;
+export default SingleBook;
