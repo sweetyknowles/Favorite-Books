@@ -2,8 +2,16 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Card, Image, Grid, Divider, List, Button,Item } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import styled from 'styled-components'
 import EditReaderForm from "./EditReaderForm";
 import NewBookForm from'./NewBookForm'
+
+
+
+const ButtonWrapper = styled.div`
+text-align: center;
+margin: 25px;
+`
 
 class SingleReader extends Component {
   state = {
@@ -47,6 +55,10 @@ class SingleReader extends Component {
   toggleShowEdit = () => {
     this.setState({ showEditReader: !this.state.showEditReader });
   };
+//new book form 
+  toggleNewBookForm = () => {
+    this.setState({ bookFormOpen: !this.state.bookFormOpen })
+  }
 
   handleSubmit = async e => {
     e.preventDefault();
@@ -109,8 +121,14 @@ class SingleReader extends Component {
   <Item.Content HorizontalAlign='middle'>Synopis:{book.synopis}</Item.Content>
     </Item>
 
-   </Item>
-  
+   
+  <ButtonWrapper>
+  <Button primary onClick={this.toggleNewBookForm}>
+    Create New Book
+  </Button>
+  { this.state.bookFormOpen ? <NewBookForm createNewBook={this.createNewBook} handleChange={this.handleChange} newReader={this.state.newReader}/> : null} 
+  </ButtonWrapper>
+  </Item>
 
               
             );

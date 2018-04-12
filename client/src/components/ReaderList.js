@@ -34,18 +34,7 @@ class ReaderList extends Component {
       location: '',
       photo_url: ''
        },
-       books: [],
-    BookFormOpen: false,
-    newBook: {
-      title: '',
-      author: '',
-      publish: '',
-      genre:'',
-      synopis:'',
-      photo_url: ''
-       },
-
-    error: ''
+         error: ''
   }
   
 
@@ -69,17 +58,7 @@ class ReaderList extends Component {
   toggleNewReaderForm = () => {
     this.setState({ readerFormOpen: !this.state.readerFormOpen })
   }
-  toggleNewBookForm = () => {
-    this.setState({ bookFormOpen: !this.state.bookFormOpen })
-  }
-  handleChange = (event) => {
-    const newBook = { ...this.state.newBook }
-    const attribute = event.target.name
-    newBook[ attribute ] = event.target.value
-
-    this.setState({ newBook: newBook })
-  }
-
+  
 
   handleChange = (event) => {
     const newReader = { ...this.state.newReader }
@@ -89,23 +68,6 @@ class ReaderList extends Component {
     this.setState({ newReader: newReader })
   }
 
-  createNewBook = async (e) => {
-    e.preventDefault()
-    const response = await axios.post('/api/books', this.state.newBook)
-    const books = [ ...this.state.books, response.data ]
-    this.setState({
-      books,
-      newBooks:{
-      title: '',
-      author: '',
-      publish: '',
-      genre:'',
-      synopis:'',
-      photo_url: ''
-       
-      }
-    })
-  }
   createNewReader = async (e) => {
     e.preventDefault()
     const response = await axios.post('/api/readers', this.state.newReader)
@@ -119,6 +81,7 @@ class ReaderList extends Component {
       }
     })
   }
+  
   render () {
     return (
       <Container>

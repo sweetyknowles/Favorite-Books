@@ -5,20 +5,24 @@ class NewBookForm extends Component {
     return (
       <Form onSubmit={this.props.createNewBook}>
         <Form.Field>
-          <label>Name</label>
-          <input placeholder='Name' name="name" onChange={this.props.handleChange} value={this.props.newBook.name}/>
+          <label>Title</label>
+          <input placeholder='Title' name="title" onChange={this.props.handleChange} value={this.props.newBook.title}/>
         </Form.Field>
         <Form.Field>
-          <label>Location</label>
-          <input placeholder='Location' name="location" onChange={this.props.handleChange} value={this.props.newBook.location}/>
+          <label>Author</label>
+          <input placeholder='Author' name="author" onChange={this.props.handleChange} value={this.props.newBook.author}/>
         </Form.Field>
         <Form.Field>
-          <label>Bio</label>
-          <input placeholder='Bio' name="bio" onChange={this.props.handleChange} value={this.props.newBook.bio}/>
+          <label>Publish</label>
+          <input placeholder='Publish' name="publish" onChange={this.props.handleChange} value={this.props.newBook.publish}/>
         </Form.Field>
         <Form.Field>
-          <label>favorite_genre</label>
-          <input placeholder='favorite_genre' name="favorite_genre" onChange={this.props.handleChange} value={this.props.newBook.favorite_genre}/>
+          <label>Genre</label>
+          <input placeholder='Genre' name="genre" onChange={this.props.handleChange} value={this.props.newBook.genre}/>
+        </Form.Field>
+        <Form.Field>
+          <label>Synopis</label>
+          <input placeholder='Synopis' name="synopis" onChange={this.props.handleChange} value={this.props.newBook.synopis}/>
         </Form.Field>
         <Form.Field>
           <label>Photo Url</label>
