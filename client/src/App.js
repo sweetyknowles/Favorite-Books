@@ -33,7 +33,7 @@ margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-image: url("https://i.imgur.com/u1bGOfU.jpg");
+  background-image: url("https://i.imgur.com/r7Pa4NN.png?1");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;

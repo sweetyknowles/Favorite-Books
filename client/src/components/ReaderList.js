@@ -20,8 +20,11 @@ margin: 25px;
 `
 
 const TextWrapper = styled.div`
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+font-size: 20px;
+color: navy;
 text-align: center;
-padding: 15px;
+padding: 50px;
 `
 
 

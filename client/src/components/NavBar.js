@@ -7,7 +7,7 @@ import { Component } from 'react'
 
 const CustomMenu = styled(Menu)`
   &&&& {
-    background: pink;
+    background: orange;
   }
 `
 

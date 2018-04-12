@@ -45,7 +45,7 @@ isreal = Reader.create! ({
     favorite_genre: "Fantasy,Mystery,Horror,Scifi"
 })
 
-Book_one = Book.create!({
+book_one = Book.create!({
     reader_id: owen.id,
     title: "Outpost",
     author: "W.Michael Gear",
@@ -56,7 +56,7 @@ Book_one = Book.create!({
        
 })
 
-Book_two = Book.create!({
+book_two = Book.create!({
     reader_id: owen.id,
     title: "CyberStorm",
     author: "Mathew Mather",
@@ -71,7 +71,7 @@ Book_two = Book.create!({
 
 
 
-Book_two = Book.create!({
+book_three = Book.create!({
     reader_id: kent.id,
     title: "In The Woods",
     author: "Tana French",
@@ -81,7 +81,7 @@ Book_two = Book.create!({
     synopis: "As dusk approaches a small Dublin suburb in the summer of 1984, mothers begin to call their children home. But on this warm evening, three children do not return from the dark and silent woods. When the police arrive, they find only one of the children. He is gripping a tree trunk in terror, wearing blood-filled sneakers and unable to recall a single detail of the previous hours.",      
  })
 
- Book_three = Book.create!({
+ book_four = Book.create!({
     reader_id: kent.id,
     title: "Inferno",
     author: "Dan Brown",
@@ -91,9 +91,9 @@ Book_two = Book.create!({
     synopis: "
     In the heart of Italy, Harvard professor of symbology Robert Langdon is drawn into a harrowing world centered on one of history’s most enduring and mysterious literary masterpieces . . .",      
  })
- comment_one = Comment.create! ({
+ comment_one = Review.create! ({
      book_id: book_one.id,
-    comment:"Amazing book, if you are looking for suspense and thrill
+    content:"Amazing book, if you are looking for suspense and thrill
     this will glue you to it, seriously check out! "
 
     
