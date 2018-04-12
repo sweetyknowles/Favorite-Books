@@ -95,10 +95,7 @@ class SingleBook extends Component {
  
       <Item.Image size='tiny' src={review.content} />
   <Item.Content HorizontalAlign='middle'>Title:{review.content}</Item.Content>
-  {/* <Item.Content HorizontalAlign='middle'>Author:{book.author}</Item.Content>
-  <Item.Content HorizontalAlign='middle'>Published:{book.publish}</Item.Content>
-  <Item.Content HorizontalAlign='middle'>Genre:{book.genre}</Item.Content>
-  <Item.Content HorizontalAlign='middle'>Synopis:{book.synopis}</Item.Content> */}
+  
     </Item>
 
    </Item>

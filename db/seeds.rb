@@ -98,3 +98,10 @@ book_three = Book.create!({
 
     
 })
+
+comment_two = Review.create! ({
+     book_id: book_two.id,
+    content:"read in a slow motion! if you like to loose out on suspence this is the one for you:)! "
+
+    
+})
