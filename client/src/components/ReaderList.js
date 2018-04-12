@@ -4,7 +4,7 @@ import { Button,Card,icon, Image, Container,Tranistion,Divider } from 'semantic-
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import NewReaderForm from './NewReaderForm'
-import NewBookForm from'./NewBookForm'
+
 
 const FlexCards = styled.div`
   display: flex;
@@ -89,6 +89,23 @@ class ReaderList extends Component {
     this.setState({ newReader: newReader })
   }
 
+  createNewBook = async (e) => {
+    e.preventDefault()
+    const response = await axios.post('/api/books', this.state.newBook)
+    const books = [ ...this.state.books, response.data ]
+    this.setState({
+      books,
+      newBooks:{
+      title: '',
+      author: '',
+      publish: '',
+      genre:'',
+      synopis:'',
+      photo_url: ''
+       
+      }
+    })
+  }
   createNewReader = async (e) => {
     e.preventDefault()
     const response = await axios.post('/api/readers', this.state.newReader)

@@ -3,14 +3,24 @@ import axios from "axios";
 import { Card, Image, Grid, Divider, List, Button,Item } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import EditReaderForm from "./EditReaderForm";
-
+import NewBookForm from'./NewBookForm'
 
 class SingleReader extends Component {
   state = {
     reader: {},
     books: [],
+    BookFormOpen: false,
+    newBook: {
+      title: '',
+      author: '',
+      publish: '',
+      genre:'',
+      synopis:'',
+      photo_url: ''
+       },
     showEditReader: false
   };
+  
 
   componentDidMount() {
     //console.log("singler Reader")
