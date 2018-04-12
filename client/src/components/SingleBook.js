@@ -1,37 +1,15 @@
 import React, { Component } from "react";
 import axios from "axios";
-import {
-  Card,
-  Image,
-  Grid,
-  Divider,
-  List,
-  Button,
-  Item
-} from "semantic-ui-react";
+import { Card, Image, Grid, Divider, List, Button,Item } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import  styled  from "styled-components";
 import EditBookForm from "./EditBookForm";
-import NewReviewForm from "./NewReviewForm";
-
-
-const ButtonWrapper = styled.div`
-  text-align: center;
-  margin: 25px;
-`;
-
-
-
 
 class SingleBook extends Component {
   state = {
     book: {},
     reviews: [],
-    showEditBook: false,
-    ReviewFormOpen: false,
-    newReview: {
-      comment: ""
-    }
+    showEditBook: false
+  
   };
 
   componentDidMount() {
@@ -61,10 +39,6 @@ class SingleBook extends Component {
     this.setState({ showEditBook: !this.state.showEditBook });
   };
 
-  toggleNewReviewForm = () => {
-    this.setState({ reviewFormOpen: !this.state.reviewFormOpen });
-  };
-
   handleSubmit = async e => {
     e.preventDefault();
     const bookId = this.state.book.id;
@@ -81,25 +55,6 @@ class SingleBook extends Component {
     this.setState({ book: newBook });
   };
 
-  handleChange = event => {
-    const newReview = { ...this.state.NewReview };
-    const attribute = event.target.name;
-    newReview[attribute] = event.target.value;
-    this.setState({ newReview: newReview });
-  };
-
-  createNewReview = async e => {
-    e.preventDefault();
-    const response = await axios.post("/api/reviews", this.state.newReview);
-    const reviews = [...this.state.reviews, response.data];
-    this.setState({
-      reviews,
-      newReview: {
-        comment: ""
-      }
-    });
-  };
-
   render() {
     return (
       <Grid centered>
@@ -112,12 +67,13 @@ class SingleBook extends Component {
           />
         ) : (
           <Card raised>
-            <Link to={`/books/${this.state.book.id}`}>
+          <Link to={`/books/${this.state.book.id}`}>
+            
               <Image centered fluid>
                 <img src={this.state.book.photo_url} />
               </Image>
-            </Link>
-
+              </Link>
+           
             <Card.Header>{this.state.book.title}</Card.Header>
             <Card.Content>
               <h4>{this.state.book.author}</h4>
@@ -132,25 +88,19 @@ class SingleBook extends Component {
         )}
 
         <Divider />
+        <List>
+          {this.state.reviews.map(review => {
+            return (
+              <Item key={review.id}>
+ <Item> 
+  <Item.Content HorizontalAlign='middle'>Title:{review.content}</Item.Content>
+  
+    </Item>
 
-        {this.state.reviews.map(review => {
-          return (
-            <Item key={review.id}>
-              <ButtonWrapper>
-                <Button primary onClick={this.toggleNewReviewForm}>
-                  New Review
-                </Button>
-                {this.state.reviewFormOpen ? (
-                  <NewReviewForm
-                    createNewReview={this.createNewReview}
-                    handleChange={this.handleChange}
-                    newReview={this.state.newReview}
-                  />
-                ) : null}
-              </ButtonWrapper>
-            </Item>
-          );
-        })}
+   </Item>   
+            );
+          })}
+        </List>
       </Grid>
     );
   }
