@@ -75,9 +75,9 @@ class SingleBook extends Component {
 
   // new book
   handleChange = e => {
-    const book = e.target.name;
+    const attribute = e.target.name;
     const newBook = { ...this.state.book };
-    newBook[book] = e.target.value;
+    newBook[attribute] = e.target.value;
     this.setState({ book: newBook });
   };
 

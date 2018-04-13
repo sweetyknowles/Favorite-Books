@@ -65,14 +65,20 @@ class SingleReader extends Component {
     this.toggleShowEdit();
     await this.getSingleReader();
   };
+
 //Create new book form
   handleChange = e => {
+    const reader = e.target.name;
+    const newReader = { ...this.state.reader };
+    newReader[reader] = e.target.value;
+    this.setState({ reader: newReader });
     const book = e.target.name;
-    const newBook = { ...this.state.newBook };
-    newBook[book] = e.target.value;
+   const newBook = { ...this.state.newBook };
+   newBook[book] = e.target.value;
     this.setState({  newBook: newBook });
-    this.getSingleReader()
-  };
+   this.getSingleReader()
+ };
+
 
 
   createNewBook= async e => {
