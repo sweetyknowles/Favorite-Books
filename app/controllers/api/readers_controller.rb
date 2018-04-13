@@ -22,9 +22,10 @@ class Api::ReadersController < ApplicationController
         render json:@reader
     end
     def destroy
-        @reader = Reader.find(params[:id]).delete
+        @reader = Reader.find(params[:id]).destroy
+
     
-        render status: :ok
+        # render status: :ok
       end
     
       private

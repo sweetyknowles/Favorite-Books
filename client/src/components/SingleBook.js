@@ -1,20 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
-import {
-  Card,
-  Image,
-  Grid,
-  Divider,
-  List,
-  Button,
-  Item
-} from "semantic-ui-react";
+import { Card,Image,Grid,Divider,List, Button, Item } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import EditBookForm from "./EditBookForm";
 import NewBookForm from "./NewBookForm";
 import EditReviewForm from "./EditReviewForm";
-import NewReviewForm from "./NewReviewForm";
+//import NewReviewForm from "./NewReviewForm";
 
 const ButtonWrapper = styled.div`
   text-align: center;
@@ -30,7 +22,6 @@ const EditButtonWrapper = styled.div`
   margin: 25px;
 `;
 
-const NewReviewFormWrapper = styled.div``;
 
 class SingleBook extends Component {
   state = {
@@ -61,7 +52,8 @@ class SingleBook extends Component {
 
   deleteBook = async () => {
     const bookId = this.props.match.params.id;
-    await axios.delete(`/api/books/${bookId}`);
+    const readerId = this.props.match.params.readerId;
+    await axios.delete(`/api/readers/${readerId}/books/${bookId}`);
     console.log(this.props.match.params.id);
     this.props.history.push("/");
   };
@@ -71,7 +63,7 @@ class SingleBook extends Component {
     this.setState({ showEditBook: !this.state.showEditBook });
   };
 
-  //edit book
+  //update book
   handleSubmit = async e => {
     e.preventDefault();
     const bookId = this.state.book.id;
