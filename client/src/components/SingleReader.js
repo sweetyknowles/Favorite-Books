@@ -1,6 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Card,Image,Grid,Divider,List,Button,Item} from "semantic-ui-react";
+import {
+  Card,
+  Image,
+  Grid,
+  Divider,
+  List,
+  Button,
+  Item } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import EditReaderForm from "./EditReaderForm";
@@ -56,7 +63,7 @@ class SingleReader extends Component {
   toggleNewBookForm = () => {
     this.setState({ bookFormOpen: !this.state.bookFormOpen });
   };
-//update reader
+
   handleSubmit = async e => {
     e.preventDefault();
     const readerId = this.state.reader.id;
@@ -65,6 +72,7 @@ class SingleReader extends Component {
     this.toggleShowEdit();
     await this.getSingleReader();
   };
+<<<<<<< HEAD
 
 //Create new book form
   handleChange = e => {
@@ -79,24 +87,14 @@ class SingleReader extends Component {
    this.getSingleReader()
  };
 
+=======
+>>>>>>> parent of 867a939... full crud on 2 models
 
-
-  createNewBook= async e => {
-    e.preventDefault();
-    const response = await axios.post(`/api/readers/${this.state.reader.id}"/books/`, this.state.newBook);
-    const books = [...this.state.books, response.data];
-    this.setState({
-      books,
-      newBook: {
-        title: "",
-        author: "",
-        publish: "",
-        genre: "",
-        synopis: "",
-        photo_url: ""
-      
-      }
-    });
+  handleChange = e => {
+    const reader = e.target.name;
+    const newReader = { ...this.state.reader };
+    newReader[reader] = e.target.value;
+    this.setState({ reader: newReader });
   };
 
   render() {
@@ -138,11 +136,10 @@ class SingleReader extends Component {
                   <Item>
                     <Link to={`/readers/${this.props.match.params.id}/books/${book.id}`}>
                       <Item.Image size="small" src={book.photo_url} />
-                    
-                    <Item.Content horizontalAlign="middle">
+                    </Link>
+                    <Item.Content HorizontalAlign="middle">
                       Title:{book.title}
                     </Item.Content>
-                    </Link>
                     <Item.Content HorizontalAlign="middle">
                       Author:{book.author}
                     </Item.Content>
@@ -169,6 +166,7 @@ class SingleReader extends Component {
             <NewBookForm
               createNewBook={this.createNewBook}
               handleChange={this.handleChange}
+              newReader={this.state.newReader}
               newBook={this.state.newBook}
             />
           ) : null}
