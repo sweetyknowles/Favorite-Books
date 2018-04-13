@@ -91,17 +91,4 @@ book_three = Book.create!({
     synopis: "
     In the heart of Italy, Harvard professor of symbology Robert Langdon is drawn into a harrowing world centered on one of history’s most enduring and mysterious literary masterpieces . . .",      
  })
- comment_one = Review.create! ({
-     book_id: book_one.id,
-    content:"Amazing book, if you are looking for suspense and thrill
-    this will glue you to it, seriously check out! "
-
-    
-})
-
-comment_two = Review.create! ({
-     book_id: book_two.id,
-    content:"read in a slow motion! if you like to loose out on suspence this is the one for you:)! "
-
-    
-})
+ 
