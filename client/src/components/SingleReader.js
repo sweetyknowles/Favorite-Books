@@ -72,8 +72,6 @@ class SingleReader extends Component {
     this.toggleShowEdit();
     await this.getSingleReader();
   };
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 //Create new book form
   handleChange = e => {
@@ -88,12 +86,6 @@ class SingleReader extends Component {
    this.getSingleReader()
  };
 
-=======
->>>>>>> parent of 867a939... full crud on 2 models
-
-=======
-
->>>>>>> parent of 867a939... full crud on 2 models
   handleChange = e => {
     const reader = e.target.name;
     const newReader = { ...this.state.reader };
