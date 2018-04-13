@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button } from 'semantic-ui-react'
+import { Form, Button, Input } from 'semantic-ui-react'
 class NewReviewForm extends Component {
   render () {
     return (

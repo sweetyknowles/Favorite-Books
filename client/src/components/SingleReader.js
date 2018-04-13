@@ -7,8 +7,7 @@ import {
   Divider,
   List,
   Button,
-  Item
-} from "semantic-ui-react";
+  Item } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import EditReaderForm from "./EditReaderForm";

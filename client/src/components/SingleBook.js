@@ -1,15 +1,46 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Card, Image, Grid, Divider, List, Button,Item } from "semantic-ui-react";
+import {
+  Card,
+  Image,
+  Grid,
+  Divider,
+  List,
+  Button,
+  Item
+} from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 import EditBookForm from "./EditBookForm";
+import NewBookForm from "./NewBookForm";
+import EditReviewForm from "./EditReviewForm";
+import NewReviewForm from "./NewReviewForm";
+
+const ButtonWrapper = styled.div`
+  text-align: center;
+  margin: 25px;
+`;
+
+const DeleteButtonWrapper = styled.div`
+  text-align: center;
+  margin: 25px;
+`;
+const EditButtonWrapper = styled.div`
+  text-align: center;
+  margin: 25px;
+`;
+
+const NewReviewFormWrapper = styled.div``;
 
 class SingleBook extends Component {
   state = {
     book: {},
     reviews: [],
-    showEditBook: false
-  
+    showEditBook: false,
+    ReviewFormOpen: false,
+    newReview: {
+      content: ""
+    }
   };
 
   componentDidMount() {
@@ -35,10 +66,12 @@ class SingleBook extends Component {
     this.props.history.push("/");
   };
 
+  //Book Edit
   toggleShowEdit = () => {
     this.setState({ showEditBook: !this.state.showEditBook });
   };
 
+  //edit book
   handleSubmit = async e => {
     e.preventDefault();
     const bookId = this.state.book.id;
@@ -48,6 +81,7 @@ class SingleBook extends Component {
     await this.getSingleBook();
   };
 
+  // new book
   handleChange = e => {
     const book = e.target.name;
     const newBook = { ...this.state.book };
@@ -56,9 +90,21 @@ class SingleBook extends Component {
   };
 
   render() {
+    const reviewMap = this.state.reviews.map(review => {
+      return (
+        <Item key={review.id}>
+          <Item>
+            <Item.Content>Review:{review.content}</Item.Content>
+          </Item>
+        </Item>
+      );
+    });
+
     return (
+      //edit book and review form
       <Grid centered>
         <Divider />
+
         {this.state.showEditBook ? (
           <EditBookForm
             handleChange={this.handleChange}
@@ -67,19 +113,22 @@ class SingleBook extends Component {
           />
         ) : (
           <Card raised>
-          <Link to={`/books/${this.state.book.id}`}>
-            
+            <Link to={`/books/${this.state.book.id}`}>
               <Image centered fluid>
                 <img src={this.state.book.photo_url} />
               </Image>
-              </Link>
-           
+            </Link>
+
             <Card.Header>{this.state.book.title}</Card.Header>
             <Card.Content>
               <h4>{this.state.book.author}</h4>
+
+              {/* // delete button */}
+
               <Button negative onClick={this.deleteBook}>
                 Delete {this.state.book.title}
               </Button>
+
               <Button primary onClick={this.toggleShowEdit}>
                 Edit Book
               </Button>
@@ -89,18 +138,11 @@ class SingleBook extends Component {
 
         <Divider />
         <List>
-          {this.state.reviews.map(review => {
-            return (
-              <Item key={review.id}>
- <Item> 
-  <Item.Content HorizontalAlign='middle'>Title:{review.content}</Item.Content>
-  
-    </Item>
-
-   </Item>   
-            );
-          })}
+          {/* Reviews mapping here */}
+          {/* reviewMap */}
         </List>
+
+       
       </Grid>
     );
   }
