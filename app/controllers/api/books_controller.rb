@@ -32,8 +32,9 @@ class Api::BooksController < ApplicationController
     
       def destroy
         @book = Book.find(params[:id]).delete
+
     
-        render status: :ok
+        
       end
     
       private

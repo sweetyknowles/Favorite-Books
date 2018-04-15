@@ -12,9 +12,6 @@ import {
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import EditBookForm from "./EditBookForm";
-import NewBookForm from "./NewBookForm";
-import EditReviewForm from "./EditReviewForm";
-import NewReviewForm from "./NewReviewForm";
 
 const ButtonWrapper = styled.div`
   text-align: center;
@@ -35,12 +32,8 @@ const NewReviewFormWrapper = styled.div``;
 class SingleBook extends Component {
   state = {
     book: {},
-    reviews: [],
     showEditBook: false,
-    ReviewFormOpen: false,
-    newReview: {
-      content: ""
-    }
+   
   };
 
   componentDidMount() {
@@ -61,7 +54,8 @@ class SingleBook extends Component {
 
   deleteBook = async () => {
     const bookId = this.props.match.params.id;
-    await axios.delete(`/api/books/${bookId}`);
+    const readerId = this.props.match.params.readerId;
+    await axios.delete(`/api/readers/${readerId}/books/${bookId}`)
     console.log(this.props.match.params.id);
     this.props.history.push("/");
   };
@@ -71,7 +65,7 @@ class SingleBook extends Component {
     this.setState({ showEditBook: !this.state.showEditBook });
   };
 
-  //edit book
+  //Update book
   handleSubmit = async e => {
     e.preventDefault();
     const bookId = this.state.book.id;
@@ -81,25 +75,8 @@ class SingleBook extends Component {
     await this.getSingleBook();
   };
 
-  // new book
-  handleChange = e => {
-    const attribute = e.target.name;
-    const newBook = { ...this.state.book };
-    newBook[attribute] = e.target.value;
-    this.setState({ book: newBook });
-  };
 
   render() {
-    const reviewMap = this.state.reviews.map(review => {
-      return (
-        <Item key={review.id}>
-          <Item>
-            <Item.Content>Review:{review.content}</Item.Content>
-          </Item>
-        </Item>
-      );
-    });
-
     return (
       //edit book and review form
       <Grid centered>
@@ -123,7 +100,7 @@ class SingleBook extends Component {
             <Card.Content>
               <h4>{this.state.book.author}</h4>
 
-              {/* // delete button */}
+              
 
               <Button negative onClick={this.deleteBook}>
                 Delete {this.state.book.title}
@@ -138,8 +115,7 @@ class SingleBook extends Component {
 
         <Divider />
         <List>
-          {/* Reviews mapping here */}
-          {/* reviewMap */}
+          
         </List>
 
        
