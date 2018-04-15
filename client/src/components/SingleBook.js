@@ -85,7 +85,7 @@ class SingleBook extends Component {
 <BookQuote />
         {this.state.showEditBook ? (
           <EditBookForm
-            handleChange={this.handleChange}
+            handleChange={this.props.handleChange}
             handleSubmit={this.handleSubmit}
             book={this.state.book}
           />

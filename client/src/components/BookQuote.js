@@ -32,5 +32,5 @@ class BookQuote extends Component {
 export default BookQuote;
 
 const QuoteWrapper = styled.div`
-  
+  margin: 10px;
 `;
