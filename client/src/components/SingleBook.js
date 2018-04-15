@@ -12,6 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import EditBookForm from "./EditBookForm";
+import BookQuote from "./BookQuote"
 
 const ButtonWrapper = styled.div`
   text-align: center;
@@ -81,7 +82,7 @@ class SingleBook extends Component {
       //edit book and review form
       <Grid centered>
         <Divider />
-
+<BookQuote />
         {this.state.showEditBook ? (
           <EditBookForm
             handleChange={this.handleChange}
