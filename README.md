@@ -11,7 +11,9 @@ The user (reader): the user will be able to create his/her own profile, and ther
 
 Functionality: Each user is able to perform Create, Read, Update and Delete on thier specific profiles. Once they are in thier accounts, they should be able to perform CRUD on their books as well, and likewise for the reviews.
 
-This app has rails backend(database) funcitonality. 
+BackEnd : This app has rails backend(database) funcitonality. 
+
+API: Random Book Quotes from third party on Single Book.
 
 Planning Process ERDs- (Entity Relationship Diagram) -provided images
 
