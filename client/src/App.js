@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styled from 'styled-components'
+import styled from "styled-components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ReaderList from "./components/ReaderList";
 import SingleReader from "./components/SingleReader";
@@ -9,18 +9,22 @@ import NavBar from "./components/NavBar";
 class App extends Component {
   render() {
     return (
-        <Router>
-          <div>
-            <NavBar />
-            <Switch>
-              <Body>
+      <Router>
+        <div>
+          <NavBar />
+          <Switch>
+            <Body>
               <Route exact path="/" component={ReaderList} />
               <Route exact path="/readers/:id" component={SingleReader} />
-              <Route exact path="/readers/:readerId/books/:id" component={SingleBook} />
-              </Body>
-            </Switch>
-          </div>
-        </Router>
+              <Route
+                exact
+                path="/readers/:readerId/books/:id"
+                component={SingleBook}
+              />
+            </Body>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
@@ -28,8 +32,7 @@ class App extends Component {
 export default App;
 
 const Body = styled.div`
-
-margin: 0 auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -38,5 +41,4 @@ margin: 0 auto;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
-
-`
+`;

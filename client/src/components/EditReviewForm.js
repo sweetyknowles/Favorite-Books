@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { Form, Input } from 'semantic-ui-react'
+import React, { Component } from "react";
+import { Form, Input } from "semantic-ui-react";
 class EditReviewForm extends Component {
-    render() {
-        return (
-            <Form onSubmit={this.props.handleSubmit}>
+  render() {
+    return (
+      <Form onSubmit={this.props.handleSubmit}>
         <Form.Field>
           <label>Review</label>
           <Input
@@ -14,10 +14,12 @@ class EditReviewForm extends Component {
             value={this.props.review.content}
           />
         </Form.Field>
-        <Form.Button color="green" type="submit">Edit Review</Form.Button>
+        <Form.Button color="green" type="submit">
+          Edit Review
+        </Form.Button>
       </Form>
-        );
-    }
+    );
+  }
 }
 
 export default EditReviewForm;

@@ -33,10 +33,8 @@ const NewReviewFormWrapper = styled.div``;
 
 class SingleBook extends Component {
   state = {
-    
     book: {},
-    showEditBook: false,
-   
+    showEditBook: false
   };
 
   componentDidMount() {
@@ -55,12 +53,10 @@ class SingleBook extends Component {
     console.log(res.data);
   };
 
-
-
   deleteBook = async () => {
     const bookId = this.props.match.params.id;
     const readerId = this.props.match.params.readerId;
-    await axios.delete(`/api/readers/${readerId}/books/${bookId}`)
+    await axios.delete(`/api/readers/${readerId}/books/${bookId}`);
     console.log(this.props.match.params.id);
     this.props.history.push("/");
   };
@@ -84,17 +80,16 @@ class SingleBook extends Component {
     const updateBook = { ...this.state.book };
     const attribute = event.target.name;
     updateBook[attribute] = event.target.value;
-  
+
     this.setState({ book: updateBook });
   };
-
 
   render() {
     return (
       //edit book and review form
       <Grid centered>
         <Divider />
-<BookQuote />
+        <BookQuote />
         {this.state.showEditBook ? (
           <EditBookForm
             handleChange={this.handleChange}
@@ -113,8 +108,6 @@ class SingleBook extends Component {
             <Card.Content>
               <h4>{this.state.book.author}</h4>
 
-              
-
               <Button negative onClick={this.deleteBook}>
                 Delete {this.state.book.title}
               </Button>
@@ -127,11 +120,7 @@ class SingleBook extends Component {
         )}
 
         <Divider />
-        <List>
-          
-        </List>
-
-       
+        <List />
       </Grid>
     );
   }

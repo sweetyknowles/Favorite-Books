@@ -41,7 +41,7 @@ const TextWrapper = styled.div`
 
 class ReaderList extends Component {
   state = {
-    books:[],
+    books: [],
     readers: [],
     ReaderFormOpen: false,
     newReader: {
@@ -68,21 +68,18 @@ class ReaderList extends Component {
       this.setState({ err: err.message });
     }
   };
-  //search 
+  //search
 
   getAllBooks = async () => {
     try {
- //const readersId = this.
-  const response = await axios.get(`/api/books`);
-      this.setState({ books:response.data })
-    } catch(err) {
+      //const readersId = this.
+      const response = await axios.get(`/api/books`);
+      this.setState({ books: response.data });
+    } catch (err) {
       console.log(err);
-      this.setState({ err:err.message})
+      this.setState({ err: err.message });
     }
- }
-
-
-
+  };
 
   toggleNewReaderForm = () => {
     this.setState({ readerFormOpen: !this.state.readerFormOpen });
@@ -113,7 +110,7 @@ class ReaderList extends Component {
   render() {
     return (
       <Container>
-         <SearchBar books = {this.state.books}/> 
+        <SearchBar books={this.state.books} />
         <TextWrapper>
           <h1>All Reading Bees</h1>
           <p>

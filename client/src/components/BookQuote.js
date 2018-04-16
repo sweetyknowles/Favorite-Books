@@ -9,7 +9,6 @@ class BookQuote extends Component {
 
   componentDidMount() {
     axios.get("https://talaikis.com/api/quotes/random/").then(res => {
-      
       this.setState({
         randomQuote: res.data
       });

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Input, Form } from 'semantic-ui-react'
+import { Input, Form } from "semantic-ui-react";
 
 class EditBookForm extends Component {
   render() {
@@ -25,7 +25,7 @@ class EditBookForm extends Component {
             value={this.props.book.author}
           />
         </Form.Field>
-        
+
         <Form.Field>
           <label>publish</label>
           <Input
@@ -34,8 +34,7 @@ class EditBookForm extends Component {
             type="text"
             onChange={this.props.handleChange}
             value={this.props.book.publish}
-             />
-             
+          />
         </Form.Field>
         <Form.Field>
           <label>Genre</label>
@@ -45,9 +44,9 @@ class EditBookForm extends Component {
             type="text"
             onChange={this.props.handleChange}
             value={this.props.book.genre}
-             />
-             </Form.Field>
-             <Form.Field>
+          />
+        </Form.Field>
+        <Form.Field>
           <label>Synopis</label>
           <Input
             placeholder={this.props.book.synopis}
@@ -55,8 +54,7 @@ class EditBookForm extends Component {
             type="text"
             onChange={this.props.handleChange}
             value={this.props.book.synopis}
-             />
-             
+          />
         </Form.Field>
         <Form.Field>
           <label>Photo Url</label>
@@ -66,10 +64,11 @@ class EditBookForm extends Component {
             type="text"
             onChange={this.props.handleChange}
             value={this.props.book.photo_url}
-             />
-             
+          />
         </Form.Field>
-        <Form.Button color="green" type="submit">Edit Book</Form.Button>
+        <Form.Button color="green" type="submit">
+          Edit Book
+        </Form.Button>
       </Form>
     );
   }
