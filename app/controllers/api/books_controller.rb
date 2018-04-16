@@ -1,6 +1,13 @@
 class Api::BooksController < ApplicationController
 
-    def index
+  def get_all_books
+    @books = Book.all 
+
+    render json: @books
+  end 
+  
+  
+  def index
         @books = Reader.find(params[:reader_id]).books
         render json: @books
       end
