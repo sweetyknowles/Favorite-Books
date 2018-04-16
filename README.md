@@ -1,30 +1,33 @@
-Reading bee Application is for all, who love to read and would like to  share their favourite books with their reviews.
+
+Reading Bee with their favourite books review to share with other bees.
 
 Technical Specifications
 
 Three models
 
-Plot: The user will have his/her own Login credentials to be able to perform CRUD on the account.They can upload their favourite book 
+Plot: The user will have his/her own Login credentials to be able to perform CRUD on the account.
 
-The user: who will be using the app to store his expereince about his travels. User will be able to add information of his travelled destinations,be able to update,edit and delete the informaiton and pics, he wishes to share. Complete RESTful routes. a guest should be be to go to the members sides and read of their expereince about a perticular desitnation. they will be able to become a memeber on the website if htey may wish to share their expreinces about a destination, and be ablet o add that to the website.
+The user (reader): the user will be able to create his/her own profile, and there on his/her account; they will be able to share their favourite books with other readers. Readers will be able to read some inspirational quotes form famous authors. 
 
-This app uses Mongo queries and the Mongoose module to communicate with a document database. There will be Promises to help build some queries.
+Functionality: Each user is able to perform Create, Read, Update and Delete on thier specific profiles. Once they are in thier accounts, they should be able to perform CRUD on their books as well, and likewise for the reviews.
+
+This app has rails backend(database) funcitonality. 
 
 Planning Process ERDs- (Entity Relationship Diagram) -provided images
 
-https://i.imgur.com/G03mMvy.jpg?1
+https://i.imgur.com/bgUIifJ.jpg?2
 
 Wireframes-designed during the planning process.
 
-https://i.imgur.com/3nRTOAW.jpg
+https://i.imgur.com/ItVF6PP.jpg?2
 
 Heroku Link
 
-https://tranquil-coast-28703.herokuapp.com/
+https://stark-badlands-30979.herokuapp.com/
 
 Trello Link
 
-https://trello.com/b/Bopg1x4Z/wdi-project-2-destinations-expereinces
+https://trello.com/b/QlbuUf2w/project-4
 
 clean HTML and CSS Deployed online and accessible to the public via Heroku via Heroku
 
