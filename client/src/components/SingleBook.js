@@ -53,6 +53,8 @@ class SingleBook extends Component {
     console.log(res.data);
   };
 
+
+
   deleteBook = async () => {
     const bookId = this.props.match.params.id;
     const readerId = this.props.match.params.readerId;
@@ -85,7 +87,7 @@ class SingleBook extends Component {
 <BookQuote />
         {this.state.showEditBook ? (
           <EditBookForm
-            handleChange={this.props.handleChange}
+            handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
             book={this.state.book}
           />

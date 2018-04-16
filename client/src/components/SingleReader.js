@@ -12,6 +12,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import EditReaderForm from "./EditReaderForm";
 import NewBookForm from "./NewBookForm";
+import BookQuote from "./BookQuote";
+
 
 const ButtonWrapper = styled.div`
   text-align: center;
