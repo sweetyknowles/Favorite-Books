@@ -32,6 +32,7 @@ const NewReviewFormWrapper = styled.div``;
 
 class SingleBook extends Component {
   state = {
+    
     book: {},
     showEditBook: false,
    
@@ -72,10 +73,18 @@ class SingleBook extends Component {
   handleSubmit = async e => {
     e.preventDefault();
     const bookId = this.state.book.id;
+    const readerId = this.props.match.params.readerId;
     const bookUpdate = { ...this.state.book };
-    await axios.patch(`/api/books/${bookId}`, bookUpdate);
+    await axios.patch(`/api/readers/${readerId}/books/${bookId}`, bookUpdate);
     this.toggleShowEdit();
     await this.getSingleBook();
+  };
+  handleChange = event => {
+    const updateBook = { ...this.state.book };
+    const attribute = event.target.name;
+    updateBook[attribute] = event.target.value;
+  
+    this.setState({ book: updateBook });
   };
 
 

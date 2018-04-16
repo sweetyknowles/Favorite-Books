@@ -56,6 +56,8 @@ toggleNewBookForm = () => {
   this.setState({ bookFormOpen: !this.state.bookFormOpen});
 }
 
+
+//creating new book
 handleChange = event => {
   const newBook = { ...this.state.newBook };
   const attribute = event.target.name;
@@ -100,6 +102,15 @@ createNewBook = async e => {
     this.toggleShowEdit()
     await this.getSingleReader()
   };
+  // Edit reader 
+  handleEditChange = (event) => {
+    const updatedReader = { ...this.state.reader }
+    const attribute = event.target.name
+    updatedReader[attribute] = event.target.value
+    console.log(event.target.value)
+
+    this.setState({ reader: updatedReader })
+}
  
   render() {
     return (
@@ -107,7 +118,7 @@ createNewBook = async e => {
         <Divider />
         {this.state.showEditReader ? (
           <EditReaderForm
-            handleChange={this.handleChange}
+            handleChange={this.handleEditChange}
             handleSubmit={this.handleSubmit}
             reader={this.state.reader}
           />
