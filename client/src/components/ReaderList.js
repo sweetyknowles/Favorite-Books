@@ -13,7 +13,6 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import NewReaderForm from "./NewReaderForm";
 import SearchBar from "./SearchBar";
-import SearchTwo from "./Searchtwo";
 
 const FlexCards = styled.div`
   display: flex;
