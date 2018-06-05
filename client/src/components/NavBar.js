@@ -32,7 +32,7 @@ class NavBar extends Component {
         <Menu.Item name='friends' active={activeItem === 'friends'} onClick={this.handleItemClick} /> */}
         <Menu.Menu position="right">
           <Menu.Item>
-            <Input icon="search" placeholder="Search..." />
+            {/* <Input icon="search" placeholder="Search..." /> */}
           </Menu.Item>
           <Menu.Item
             name="logout"
