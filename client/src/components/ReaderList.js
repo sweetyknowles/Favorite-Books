@@ -14,6 +14,7 @@ import styled from "styled-components";
 import NewReaderForm from "./NewReaderForm";
 import SearchBar from "./SearchBar";
 
+
 const FlexCards = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -23,6 +24,9 @@ const FlexCards = styled.div`
 `;
 
 const CardWrapper = styled.div`
+font-family: 'Peddana', serif;
+font-weight: strong;
+font-size:20px;
   padding: 5px;
 `;
 
@@ -32,8 +36,8 @@ const ButtonWrapper = styled.div`
 `;
 
 const TextWrapper = styled.div`
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 20px;
+  font-family: 'Lobster', cursive;
+  font-size: 25px;
   color: navy;
   text-align: center;
   padding: 50px;
@@ -126,10 +130,10 @@ class ReaderList extends Component {
                   <Link to={`/readers/${reader.id}`}>
                     <Image src={reader.photo_url} />
                     <Card.Content>
-                      <Card.Header>READING BEE:{reader.name}</Card.Header>
-                      <Card.Meta>BEE HIVE AT:{reader.location}</Card.Meta>
-                      <Card.Meta>BEE TYPE:{reader.bio}</Card.Meta>
-                      <Card.Meta>BEE FRENZY:{reader.favorite_genre}</Card.Meta>
+                      <Card.Header>READING BEE: {reader.name}</Card.Header>
+                      <Card.Meta>BEE HIVE : {reader.location}</Card.Meta>
+                      <Card.Meta>BEE TYPE : {reader.bio}</Card.Meta>
+                      <Card.Meta>BEE FRENZY : {reader.favorite_genre}</Card.Meta>
                     </Card.Content>
                   </Link>
                 </Card>

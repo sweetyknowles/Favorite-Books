@@ -5,6 +5,15 @@ import ReaderList from "./components/ReaderList";
 import SingleReader from "./components/SingleReader";
 import SingleBook from "./components/SingleBook";
 import NavBar from "./components/NavBar";
+import { injectGlobal } from "styled-components";
+
+
+injectGlobal`
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Peddana|Teko|Yanone+Kaffeesatz');
+</style>`;
+
+
 
 class App extends Component {
   render() {
