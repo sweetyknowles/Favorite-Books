@@ -15,7 +15,7 @@ class SearchBar extends Component {
 
   render() {
     let filteredBooks = this.props.books.filter(book => {
-      return;
+      return
       book.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
     });
     return (
