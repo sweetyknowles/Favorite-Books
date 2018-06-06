@@ -161,15 +161,19 @@ class SingleReader extends Component {
                         Title:{book.title}
                       </Item.Content>
                     </Link>
+                    <br/>
                     <Item.Content HorizontalAlign="middle">
                       Author:{book.author}
                     </Item.Content>
+                    <br/>
                     <Item.Content HorizontalAlign="middle">
                       Published:{book.publish}
                     </Item.Content>
+                    <br/>
                     <Item.Content HorizontalAlign="middle">
                       Genre:{book.genre}
                     </Item.Content>
+                    <br/>
                     <Item.Content HorizontalAlign="middle">
                       Synopis:{book.synopis}
                     </Item.Content>
@@ -199,8 +203,10 @@ class SingleReader extends Component {
 export default SingleReader;
 
 const BookWrapper = styled.div`
-  width: 40%;
-  display: block;
-  margin: 0 auto;
-  font-weight: bold;
+font-family: 'Peddana', serif;
+font-size:15px;
+width: 40%;
+display: block;
+margin: 0 auto;
+font-weight: bold;
 `;
