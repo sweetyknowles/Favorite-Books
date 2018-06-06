@@ -43,6 +43,8 @@ const TextWrapper = styled.div`
   padding: 50px;
 `;
 
+
+
 class ReaderList extends Component {
   state = {
     books: [],
@@ -129,16 +131,24 @@ class ReaderList extends Component {
                 <Card style={{ padding: "10px" }} key={reader.id}>
                   <Link to={`/readers/${reader.id}`}>
                     <Image src={reader.photo_url} />
+                    <br/>
                     <Card.Content>
                       <Card.Header>READING BEE: {reader.name}</Card.Header>
+                      <br/>
+                      
                       <Card.Meta>BEE HIVE : {reader.location}</Card.Meta>
                       <Card.Meta>BEE TYPE : {reader.bio}</Card.Meta>
                       <Card.Meta>BEE FRENZY : {reader.favorite_genre}</Card.Meta>
+                    
                     </Card.Content>
+                   
                   </Link>
+                  
+
                 </Card>
               );
             })}
+            
           </FlexCards>
         </CardWrapper>
         {this.state.err}
