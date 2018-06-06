@@ -38,7 +38,7 @@ const ButtonWrapper = styled.div`
 const TextWrapper = styled.div`
   font-family: 'Lobster', cursive;
   font-size: 25px;
-  color:orangered;
+  color:navy;
   text-align: center;
   padding: 50px;
 `;
