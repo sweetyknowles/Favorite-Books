@@ -25,8 +25,7 @@ class App extends Component {
             <Body>
               <Route exact path="/" component={ReaderList} />
               <Route exact path="/readers/:id" component={SingleReader} />
-              <Route
-                exact
+              <Route exact
                 path="/readers/:readerId/books/:id"
                 component={SingleBook}
               />
