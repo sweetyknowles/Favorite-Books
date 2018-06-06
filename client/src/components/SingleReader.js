@@ -156,10 +156,12 @@ class SingleReader extends Component {
                       }`}
                     >
                       <Item.Image size="small" src={book.photo_url} />
-
+                      <br/>
+                      <Titlewrapper>
                       <Item.Content HorizontalAlign="middle">
                         Title:{book.title}
                       </Item.Content>
+                      </Titlewrapper>
                     </Link>
                     <br/>
                     <Item.Content HorizontalAlign="middle">
@@ -209,4 +211,8 @@ width: 40%;
 display: block;
 margin: 0 auto;
 font-weight: bold;
+`;
+const Titlewrapper = styled.div`
+font-size: 24px;
+font-weight: strong;
 `;
